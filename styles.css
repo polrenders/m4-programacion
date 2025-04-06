@@ -1,0 +1,550 @@
+﻿/* styles.css */
+
+:root {
+    --primary-color: #FFC107;
+    --secondary-color: #4CAF50;
+    --light-primary-color: #FFECB3;
+    --dark-primary-color: #FFA000;
+    --primary-text-color: #212121;
+    --secondary-text-color: #757575;
+    --divider-color: #BDBDBD;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-size: 16px; /* 1rem */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: auto;
+    gap: 20px;
+}
+
+
+.hero {
+    grid-column: span 12; /* Ocupa 12 columnas */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Definimos 12 columnas dentro de hero */
+    gap: 20px;
+    position: relative; /* Ensure the hero section is positioned correctly */
+}
+.h-content {
+    grid-column: span 5; /* Ocupa 4 columnas */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo con el color secundario y 50% de transparencia */
+    border-radius: 15px; /* Bordes redondeados */
+    padding: 20px 20px;
+    margin-top: 200px; /* Espacio superior */
+    margin-left: 50px; /* Espacio izquierdo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+}
+
+h1 {
+    font-size: 3rem; /* Tamaño grande */
+    color: white; /* Cambiado al color primario */    
+    text-align: left;
+}
+.h-content span {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+
+/* Estilo para el botón de contacto */
+.contact-button, .cta-button {
+    background-color: var(--secondary-color);
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin-right: 20px; /* Add margin to the right */
+}
+
+    .contact-button:hover, .cta-button:hover {
+        background-color: var(--primary-color);
+        color: black;
+    }
+
+.cta-button {
+    background-color: var(--secondary-color);
+}
+nav {
+    grid-column: span 12;
+    background-color: rgba(0, 0, 0, 1); /* Ensure the navbar has a background color */
+    display: flex; /* Make the nav horizontal */
+    justify-content: space-between; /* Space between nav items */
+    align-items: center; /* Center the nav items vertically */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    height: 80px; /* Set a fixed height for the nav */
+    width: 100%; /* Ensure the nav takes the full width */
+    position: fixed; /* Make the nav sticky */
+    top: 0; /* Stick the nav to the top */
+    z-index: 1000; /* Ensure the nav stays above other content */
+    transition: opacity 0.5s ease;
+}
+
+    nav ul {
+        list-style-type: none; /* Remove bullets from ul */
+        padding: 0; /* Remove default padding */
+        margin: 0 auto; /* Center the ul horizontally */
+        display: flex; /* Make the ul horizontal */
+    }
+
+    nav li {
+        list-style-type: none; /* Remove bullets from li */
+        margin: 0; /* Remove default margin */
+    }
+
+    nav a {
+        display: block;
+        color: var(--primary-color);
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: bold; /* Make the nav links bold */
+    }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+            color: var(--primary-text-color);
+        }
+
+        nav a.active {
+            background-color: var(--primary-color);
+            color: var(--primary-text-color);
+        }
+
+        nav a:active {
+            background-color: var(--dark-primary-color);
+            color: var(--primary-text-color);
+        }
+        
+/* Estilo para el botón de contacto */
+
+.videomain {
+    width: 100vw; /* Make the video take up the full viewport width */
+    height: 100vh; /* Make the video take up the full viewport height */
+    display: block; /* Remove any default inline spacing */
+    object-fit: cover; /* Ensure the video covers the entire area */
+    z-index: -1; /* Set the z-index to be lower than the navbar */
+    position: absolute;
+}
+
+    .videomain::-webkit-media-controls {
+        display: none !important;
+    }
+
+    .videomain::-moz-media-controls {
+        display: none !important;
+    }
+
+    .videomain::-ms-media-controls {
+        display: none !important;
+    }
+
+    .videomain::-o-media-controls {
+        display: none !important;
+    }
+
+.productos-section {
+    grid-column: span 12;
+    width: 100%; /* Ensure the section spans the full width */
+    margin: 100px 0 0; /* Remove auto to align to the left */
+    padding: 2rem;
+}
+
+.productos-header {
+    display: flex;
+    justify-content: center; /* Center the header horizontally */
+    align-items: center; /* Center the header vertically */
+    text-align: center; /* Ensure text within the header is centered */
+    margin-bottom: 2rem;
+}
+
+    .productos-header h2 {
+        font-size: 2rem; /* Corrected font size */
+        font-weight: 800;
+        text-align: center; /* Ensure the h2 text is centered */
+    }
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Change to 4 items per row */
+    gap: 4rem;
+    padding: 0 4rem; /* Add padding to the grid */
+}
+
+.producto {
+    border-radius: 6px;
+    padding-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    background-color: black;
+    border-radius: 16PX;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Drop shadow */
+    cursor: pointer;
+    transition: transform 0.3s ease-in; /* Add transition for smooth scaling */
+}
+
+.producto:hover {
+    transform: scale(1.05); /* Scale up the product on hover */
+}
+   .producto .imagen {
+       background-color: white;
+       width: 100%;
+       height: 200px;
+       border-radius: 16px 16px 0 0;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .producto .info {
+       padding: 1rem;
+   }
+
+   .producto h3 {
+       font-size: 1rem;
+       font-weight: 600;
+       margin-bottom: 0.2rem;
+       color: white; 
+       color: var(--primary-color);  
+   }
+
+   .producto small {
+       color: white;
+   }
+
+   .producto .precio {
+       margin-top: 0.5rem;
+       font-size: 1rem;
+       font-weight: bold;
+       color: var(--primary-color);
+   }
+
+.ver-todos {
+   border: 1px solid #000;
+   background: none;
+   padding: 0.5rem 1rem;
+   border-radius: 30px;
+   cursor: pointer;
+   font-size: 0.9rem;
+   display: block; /* Ensure the button is a block element */
+   margin: 100px auto; /* Center the button within its container */
+}
+
+    .producto .imagen {
+        background-color: white;
+        width: 100%;
+        height: 200px;
+        border-radius: 16px 16px 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        
+
+    .producto .info {
+        padding: 1rem;
+    }
+
+    .producto h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.2rem;
+        color: white; 
+       color: var(--primary-color);  
+ 
+    }
+
+    .producto small {
+        color: white;
+    }
+
+    .producto .precio {
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+
+
+
+.ver-todos {
+    border: 1px solid #000;
+    background: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: block; /* Ensure the button is a block element */
+    margin: 30px auto; /* Center the button within its container */
+}
+
+
+.servicios {
+    grid-column: span 12;
+    width: 100%; /* Ensure the section spans the full width */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr); /* Change to 12 columns */
+    gap: 2rem;
+    padding: 4rem 2rem;
+    font-family: sans-serif;
+    margin: auto;
+   
+}
+
+.intro {
+    grid-column: span 6;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+
+    .intro h2 {
+        font-size: 2rem; 
+        font-weight: 800;
+        text-align: LEFT; 
+    }
+
+.intro p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #000;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    margin-bottom: 2rem;
+}
+.link:hover {
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.baner-servicios {
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que la imagen no se salga del contenedor */
+}
+
+    .baner-servicios img {
+        width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+        display: block; /* Elimina el espacio en línea */
+    }
+.servicios-detalle {
+    grid-column: span 6;
+    padding-top: 6rem;
+    padding-left: 4rem;
+}
+.servicio {
+    
+    padding: 0 2rem ;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.icono {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.servicio h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.servicio p {
+    font-size: 0.95rem;
+    color: #444;
+
+
+       }
+
+
+.beneficios {
+    grid-column: span 12;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem 4rem;
+        margin: auto;
+    font-family: sans-serif;
+}
+
+.imagen-beneficios {
+    flex: 1 1 300px;
+}
+
+    .imagen img {
+        width: 100%;
+        height: auto;
+        border-radius: 0.5rem;
+    }
+
+.contenido {
+    flex: 1 1 400px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #555;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.contenido h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: LEFT;
+}
+
+.contenido p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 1rem;
+}
+
+.lista-beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+}
+
+    .lista-beneficios li {
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+        color: var(--secondary-color); /* Color secundario para el texto */
+        font-weight: 600; /* Peso de la fuente para los iconos */
+    }
+
+        .lista-beneficios li i {
+            color: var(--primary-color); /* Color primario para los iconos */
+            margin-right: 0.5rem; /* Espacio entre el icono y el texto */
+            font-weight: 600; /* Peso de la fuente para los iconos */
+        }
+
+.botones {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn-outline {
+    border: 1px solid #000;
+    background: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-link {
+    border: none;
+    background: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.testimonials {
+    grid-column: span 12;
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 25px;
+    width: 300px;
+    text-align: left;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.stars {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.testimonial-text {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
+    border-radius: 50%; /* Ensure the image is circular */
+}
+.name {
+    font-weight: 600;
+    margin: 0;
+}
+
+.position {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+.logo {
+    width: 80px;
+}
